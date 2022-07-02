@@ -89,20 +89,6 @@ ul{
 }
 .cart-checkout-btn{
     position: relative;
-    &:hover{
-        img{
-            transform: translateX(5px);
-        }
-    }
-    img{
-        position: absolute;
-        transition: transform 0.15s ease-in-out;
-        right: 30px;
-        top: 20px;
-    }
-}
-}
-.cart-checkout-btn{
     width: 100%;
     background: #9DD558;
     border-radius: 18px;
@@ -115,10 +101,20 @@ ul{
     transition: background 0.1s ease-in-out;
     &:hover{
         background: lighten(#9DD558, 5%);
+        img{
+            transform: translateX(5px);
+        }
     }
     &:active{
-        background: darken(#9DD558, 5%);
+            background: darken(#9DD558, 5%);
+        }
+    img{
+        position: absolute;
+        transition: transform 0.15s ease-in-out;
+        right: 30px;
+        top: 20px;
     }
+}
 }
 
 .cart_empty{
@@ -139,6 +135,13 @@ ul{
         display: flex;
         font-size: 16px;
         justify-content: center;
+        transition: background 0.1s ease-in-out;
+    &:hover{
+        background: lighten(#9DD558, 5%);
+    }
+    &:active{
+        background: darken(#9DD558, 5%);
+    }
         img{
            margin-right: 15px;
             transform:  rotate(-180deg);

@@ -1,0 +1,48 @@
+.favorites{
+    padding-left: 60px;
+    padding-top: 40px;
+    &_title{
+        
+    }
+    &_cards{
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+.favorites_null{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 550px;
+    .favorites_info{
+    }
+}
+.favorite_backbtn{
+    margin-top: 40px;
+    width: 100%;
+    cursor: pointer;
+    border: none;
+    color: #fff;
+    border-radius: 18px;
+    background-color: #9DD458;
+    height: 55px;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.1s ease-in-out;
+    &:hover{
+        background: lighten(#9DD558, 5%);
+    img{
+        transform: translateX(-5px);
+    }
+    }
+    &:active{
+        background: darken(#9DD558, 5%);
+    }
+    img{
+        transition: transform 0.15s ease-in-out;
+        margin-right: 5px;
+    }
+}
