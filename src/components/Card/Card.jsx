@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import './Card.scss'
+import ContentLoader from "react-content-loader";
+import { AppContext } from "../../App";
 
-const Card = ({id, imageUrl, title,price, onPlus, onFavorite, favorited}) => {
-  const [isAdded, setIsAdded] = useState(false); 
+const Card = ({id, imageUrl, title,price, onPlus, onFavorite, favorited = false, loading = false,}) => {
   const [isFavorite, setIsFavorite] = useState(favorited);
+  const {isItemAdded} = useContext(AppContext);
 
   const onClickFavorite = () => {
     setIsFavorite(!isFavorite)
@@ -11,12 +13,25 @@ const Card = ({id, imageUrl, title,price, onPlus, onFavorite, favorited}) => {
   }
 
   const onClickPlus = () =>{
-    setIsAdded(!isAdded);
     onPlus({id,title, price, imageUrl})
   }
     return(
         <div className="card">
-        <div className="card_favorite">
+          {loading ? <ContentLoader 
+      speed={2}
+      width={155}
+      height={265}
+      viewBox="0 0 155 265"
+      backgroundColor="#f3f3f3"
+      foregroundColor="#ecebeb"
+    >
+    <rect x="0" y="0" rx="10" ry="10" width="155" height="91" /> 
+    <rect x="0" y="106" rx="3" ry="3" width="155" height="15" /> 
+    <rect x="0" y="124" rx="3" ry="3" width="93" height="15" /> 
+    <rect x="0" y="162" rx="8" ry="8" width="80" height="24" /> 
+    <rect x="118" y="155" rx="8" ry="8" width="32" height="32" />
+  </ContentLoader> : <>
+          <div className="card_favorite">
            <img onClick={onClickFavorite} src={isFavorite ? "/img/heart-liked.svg" : "/img/heart-unliked.svg"} alt="unliked"/>
         </div>
         <img width={133} height={112} src={imageUrl} alt="Sneakers"/>
@@ -26,8 +41,9 @@ const Card = ({id, imageUrl, title,price, onPlus, onFavorite, favorited}) => {
             <span>Цена:</span>
             <b>{price}$</b>
           </div>
-          <img onClick={onClickPlus} className="card-plus" src={isAdded ? "/img/btn-checked.svg" : "/img/btn-plus.svg"} alt=""/>
-        </div>
+          <img onClick={onClickPlus} className="card-plus" src={isItemAdded(id) ? "/img/btn-checked.svg" : "/img/btn-plus.svg"} alt=""/>
+        </div> 
+      </>}
       </div>
     )
 }
