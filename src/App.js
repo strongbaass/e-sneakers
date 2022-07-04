@@ -49,7 +49,7 @@ const App = () => {
       setCartItems((cartItems) => [...cartItems, obj]);
       const { data } = await axios.post('https://62be58380bc9b12561556a4d.mockapi.io/cart', obj);
       setCartItems((cartItems) => cartItems.map(item => {
-        if(item.parentId == data.parentId){
+        if(item.parentId === data.parentId){
           return{
             ...item,
             id: data.id
@@ -94,9 +94,12 @@ const App = () => {
   const isItemAdded = (id) => {
     return cartItems.some((obj) => Number(obj.parentId) === Number(id));
   }
+  const IsItemFavorited = (id) => {
+    return favorites.some((obj) => Number(obj.parentId) === Number(id));
+  }
 
   return(
-    <AppContext.Provider value={{cartItems, favorites, items, isItemAdded, setCartItems, onAddToCart}}>
+    <AppContext.Provider value={{cartItems, favorites, items, isItemAdded, setCartItems, onAddToCart, IsItemFavorited }}>
 
     <div className="wrapper">
         <CartDrawer onRemove={onRemoveItem} items={cartItems} onCloseCart={() => setCartOpened(false)} opened={cartOpened}/>

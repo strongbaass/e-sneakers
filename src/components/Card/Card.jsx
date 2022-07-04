@@ -1,19 +1,16 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import './Card.scss'
 import ContentLoader from "react-content-loader";
 import { AppContext } from "../../App";
 
-const Card = ({id, imageUrl, title,price, onPlus, onFavorite, favorited = false, loading = false,}) => {
-  const [isFavorite, setIsFavorite] = useState(favorited);
-  const {isItemAdded} = useContext(AppContext);
+const Card = ({id, imageUrl, title,price, onPlus, onFavorite, favorites = true, loading = false,}) => {
+  const {isItemAdded, IsItemFavorited} = useContext(AppContext);
   const obj = {id, parentId: id, title, price, imageUrl}
-
   const onClickFavorite = () => {
-    setIsFavorite(!isFavorite)
     onFavorite(obj)
   }
 
-  const onClickPlus = () =>{
+  const onClickPlus = () => {
     onPlus(obj)
   }
     return(
@@ -33,7 +30,7 @@ const Card = ({id, imageUrl, title,price, onPlus, onFavorite, favorited = false,
     <rect x="118" y="155" rx="8" ry="8" width="32" height="32" />
   </ContentLoader> : <>
           <div className="card_favorite">
-           {onFavorite && <img onClick={onClickFavorite} src={isFavorite ? "/img/heart-liked.svg" : "/img/heart-unliked.svg"} alt="unliked"/>}
+           {onFavorite && <img onClick={onClickFavorite} src={IsItemFavorited(id) === favorites ?  "/img/heart-liked.svg" : "/img/heart-unliked.svg"} alt="unliked"/>}
         </div>
         <img width={133} height={112} src={imageUrl} alt="Sneakers"/>
         <h5>{title}</h5>

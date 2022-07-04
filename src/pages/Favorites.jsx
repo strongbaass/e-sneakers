@@ -16,7 +16,7 @@ const Favorites = ({ onAddToFavorite}) => {
             <div className="favorites_cards">
             {
             favorites.map((item, index) => (
-                <Card favorited={true} {...item} key={index} onFavorite={onAddToFavorite}/>
+                <Card favorites={false} {...item} key={index} onFavorite={onAddToFavorite}/>
                 ))
             }
                 </div>
