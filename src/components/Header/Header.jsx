@@ -10,7 +10,7 @@ const Header = (props) => {
         <header>
            <Link to="/">
         <div className="headerLeft">
-          <img width={40} height={40} src="/img/logo.png" alt=""/>
+          <img width={40} height={40} src="img/logo.png" alt=""/>
           <div className="headerInfo">
             <h3>Sneakers store</h3>
             <p>Магазин лучших кроссовок</p>
@@ -18,9 +18,9 @@ const Header = (props) => {
         </div>
         </Link>
         <ul className="headerRight">
-            <li onClick={props.onClickCart} className="cart-info"><img className="cart-img" width={18} height={18} src="/img/cart.svg" alt=""/><span>{totalPrice} $</span></li>
-              <li className="favorite-info"><Link to="/favorites"><img width={18} height={18} src="/img/favorite.svg" alt=""/></Link></li>
-            <li className="user-info"><Link to="/orders"><img width={18} height={18} src="/img/user.svg" alt=""/></Link></li>
+            <li onClick={props.onClickCart} className="cart-info"><img className="cart-img" width={18} height={18} src="img/cart.svg" alt=""/><span>{totalPrice} $</span></li>
+              <li className="favorite-info"><Link to="/favorites"><img width={18} height={18} src="img/favorite.svg" alt=""/></Link></li>
+            <li className="user-info"><Link to="/orders"><img width={18} height={18} src="img/user.svg" alt=""/></Link></li>
         </ul>
       </header>
     )
