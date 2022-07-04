@@ -32,8 +32,6 @@ const Favorites = ({ onAddToFavorite}) => {
                     </Link>
                 </div>
             </div>}
-
-            
         </div>
     )
 }

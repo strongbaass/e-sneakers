@@ -1,11 +1,11 @@
-import React, {useContext, useState} from "react";
+import React, {useState} from "react";
 import './CardDrawer.scss';
 import Info from "../Info/Info";
-import { AppContext } from "../../App";
 import axios from "axios";
+import { useCart } from "../../hooks/useCart";
 
-const CartDrawer = ({onCloseCart, onRemove,items = []}) => {
-  const {setCartItems, cartItems} = useContext(AppContext);
+const CartDrawer = ({onCloseCart, onRemove,items = [], opened}) => {
+  const {totalPrice, cartItems, setCartItems} = useCart()
   const [orderId, setOrderId] = useState(null);
   const [isOrderComplete, setIsOrderComplete] = useState(false)
 
@@ -28,7 +28,7 @@ const CartDrawer = ({onCloseCart, onRemove,items = []}) => {
  
   }
     return(
-        <div className="overlay"> 
+        <div className={`overlay ${opened ? "overlay_visible" : ''}`}> 
         <div className="drawer">
           <div className="cart">
             <h2 className="cart-title">Корзина <img onClick={onCloseCart} src="/img/btn-remove.svg" alt="Remove"/></h2>
@@ -52,12 +52,12 @@ const CartDrawer = ({onCloseCart, onRemove,items = []}) => {
             <li className="cart-total">
               <span>Итого:</span>
               <div></div>
-              <b>129.90$</b>
+              <b>{totalPrice} $</b>
             </li>
             <li className="cart-tax">
               <span>Налог 5%:</span>
               <div></div>
-              <b>7$</b>
+              <b>{totalPrice / 100 * 5} $</b>
             </li>
           </ul>
           <button className="cart-checkout-btn" onClick={onClickOrder}>Оформить заказ <img src="/img/arrow.svg" alt="Arrow"/></button>
