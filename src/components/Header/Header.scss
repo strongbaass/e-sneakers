@@ -20,8 +20,11 @@ header{
                 margin: 0;
             }
         }
-    .headerRight{
+}
+
+.headerRight{
         display: flex;
+        align-items: center;
         list-style: none;
         .cart-info, .favorite-info{
             cursor: pointer;
@@ -38,4 +41,3 @@ header{
             }
         }
     }
-}

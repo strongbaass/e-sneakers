@@ -33,7 +33,7 @@ const Card = ({id, imageUrl, title,price, onPlus, onFavorite, favorited = false,
     <rect x="118" y="155" rx="8" ry="8" width="32" height="32" />
   </ContentLoader> : <>
           <div className="card_favorite">
-           {onFavorite && <img onClick={onClickFavorite} src={isFavorite ? "img/heart-liked.svg" : "img/heart-unliked.svg"} alt="unliked"/>}
+           {onFavorite && <img onClick={onClickFavorite} src={isFavorite ? "/img/heart-liked.svg" : "/img/heart-unliked.svg"} alt="unliked"/>}
         </div>
         <img width={133} height={112} src={imageUrl} alt="Sneakers"/>
         <h5>{title}</h5>
@@ -42,7 +42,7 @@ const Card = ({id, imageUrl, title,price, onPlus, onFavorite, favorited = false,
             <span>Цена:</span>
             <b>{price}$</b>
           </div>
-         {onPlus && <img onClick={onClickPlus} className="card-plus" src={isItemAdded(id) ? "img/btn-checked.svg" : "img/btn-plus.svg"} alt=""/>}
+         {onPlus && <img onClick={onClickPlus} className="card-plus" src={isItemAdded(id) ? "/img/btn-checked.svg" : "/img/btn-plus.svg"} alt=""/>}
         </div> 
       </>}
       </div>

@@ -31,7 +31,7 @@ const CartDrawer = ({onCloseCart, onRemove,items = [], opened}) => {
         <div className={`overlay ${opened ? "overlay_visible" : ''}`}> 
         <div className="drawer">
           <div className="cart">
-            <h2 className="cart-title">Корзина <img onClick={onCloseCart} src="img/btn-remove.svg" alt="Remove"/></h2>
+            <h2 className="cart-title">Корзина <img onClick={onCloseCart} src="/img/btn-remove.svg" alt="Remove"/></h2>
 
             {items.length > 0 ?
             <div>
@@ -43,7 +43,7 @@ const CartDrawer = ({onCloseCart, onRemove,items = [], opened}) => {
                   <p className="cart_sneakers_name">{obj.title}</p>
                   <b className="cart_sneakers_price">{obj.price} $</b>
               </div>
-                <img className="cart_removebtn" src="img/btn-remove.svg" onClick={() => onRemove(obj.id)}  alt="Remove"/>
+                <img className="cart_removebtn" src="/img/btn-remove.svg" onClick={() => onRemove(obj.id)}  alt="Remove"/>
               </div>
             ))}
           </div>
@@ -60,10 +60,10 @@ const CartDrawer = ({onCloseCart, onRemove,items = [], opened}) => {
               <b>{totalPrice / 100 * 5} $</b>
             </li>
           </ul>
-          <button className="cart-checkout-btn" onClick={onClickOrder}>Оформить заказ <img src="img/arrow.svg" alt="Arrow"/></button>
+          <button className="cart-checkout-btn" onClick={onClickOrder}>Оформить заказ <img src="/img/arrow.svg" alt="Arrow"/></button>
         </div>
             </div>
-            : <Info onCloseCart={onCloseCart} title={isOrderComplete ? "Заказ оформлен!" : "Корзина Пустая"}imgUrl={isOrderComplete ? "img/complete-order.jpg" :"img/box.png" } description={isOrderComplete ? `Ваш заказ #${orderId} скоро будет передан курьерской доставке` : "Добавьте хотя бы одну пару кроссовок, чтобы сделать заказ."}/>
+            : <Info onCloseCart={onCloseCart} title={isOrderComplete ? "Заказ оформлен!" : "Корзина Пустая"}imgUrl={isOrderComplete ? "/img/complete-order.jpg" :"/img/box.png" } description={isOrderComplete ? `Ваш заказ #${orderId} скоро будет передан курьерской доставке` : "Добавьте хотя бы одну пару кроссовок, чтобы сделать заказ."}/>
                 }
           </div>
         </div>
