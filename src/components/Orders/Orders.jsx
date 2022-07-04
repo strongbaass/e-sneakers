@@ -37,7 +37,7 @@ const Orders = () => {
                 <img src="img/nofavorite.png" alt="" />
                 <h3>У вас нет заказов</h3>
                 <p>Вы нищеброд? Оформите хотя бы один заказ.</p>
-                <Link to="/">
+                <Link to="/e-sneakers">
                     <button className="favorite_backbtn"><img src="img/arrowleft.svg" alt="" /> Вернуться назад</button>
                 </Link>
             </div>

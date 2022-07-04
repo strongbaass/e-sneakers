@@ -27,7 +27,7 @@ const Favorites = ({ onAddToFavorite}) => {
                     <img src="img/nofavorite.png" alt="" />
                     <h3>Закладок нет :(</h3>
                     <p>Вы ничего не добавляли в закладки</p>
-                    <Link to="/">
+                    <Link to="/e-sneakers">
                         <button className="favorite_backbtn"><img src="img/arrowleft.svg" alt="" /> Вернуться назад</button>
                     </Link>
                 </div>
