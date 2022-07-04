@@ -102,7 +102,7 @@ const App = () => {
         <CartDrawer onRemove={onRemoveItem} items={cartItems} onCloseCart={() => setCartOpened(false)} opened={cartOpened}/>
       <Header onClickCart={() => setCartOpened(true)}/> 
        <Routes>
-            <Route path="/e-sneakers" element={<Home isLoading={isLoading} cartItems={cartItems} items={items} searchValue={searchValue} onAddToCart={onAddToCart} onAddToFavorite={onAddToFavorite} onChangeSearchInput={onChangeSearchInput}/>}/>
+            <Route path="e-sneakers" element={<Home isLoading={isLoading} cartItems={cartItems} items={items} searchValue={searchValue} onAddToCart={onAddToCart} onAddToFavorite={onAddToFavorite} onChangeSearchInput={onChangeSearchInput}/>}/>
             <Route path="favorites" element={<Favorites onAddToFavorite={onAddToFavorite}/>}/>
             <Route path="orders" element={<Orders/>}/>
         </Routes>
