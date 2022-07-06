@@ -27,6 +27,14 @@ const CartDrawer = ({onCloseCart, onRemove,items = [], opened}) => {
     }
  
   }
+  function taxTotal  () {
+    const taxPrice = totalPrice / 100 * 5;
+    const tax = [...taxPrice.toString()].map(String);
+    if(tax.length > 5){
+    tax.length = 5
+    }
+    return tax
+  }
     return(
         <div className={`overlay ${opened ? "overlay_visible" : ''}`}> 
         <div className="drawer">
@@ -57,7 +65,7 @@ const CartDrawer = ({onCloseCart, onRemove,items = [], opened}) => {
             <li className="cart-tax">
               <span>Tax 5%:</span>
               <div></div>
-              <b>{totalPrice / 100 * 5} $</b>
+              <b>{taxTotal()} $</b>
             </li>
           </ul>
           <button className="cart-checkout-btn" onClick={onClickOrder}>Make an order<img src="/img/arrow.svg" alt="Arrow"/></button>
