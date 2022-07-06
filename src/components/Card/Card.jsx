@@ -36,7 +36,7 @@ const Card = ({id, imageUrl, title,price, onPlus, onFavorite, favorites = true, 
         <h5>{title}</h5>
         <div className="card-info">
           <div className="card-info-price">
-            <span>Цена:</span>
+            <span>Price:</span>
             <b>{price}$</b>
           </div>
          {onPlus && <img onClick={onClickPlus} className="card-plus" src={isItemAdded(id) ? "/img/btn-checked.svg" : "/img/btn-plus.svg"} alt=""/>}

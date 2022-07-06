@@ -16,10 +16,10 @@ const Home = ({items,searchValue,onAddToCart,onAddToFavorite,onChangeSearchInput
     return(
         <div className="content">
         <div className="content_info">
-          <h1>{searchValue ? `Поиск по запросу: "${searchValue}"` : 'Все кросовки'}</h1>
+          <h1>{searchValue ? `Search by: "${searchValue}"` : 'All sneakers'}</h1>
           <div className="search_menu">
             <img src="/img/search.svg" alt="Search"/>
-            <input onChange={onChangeSearchInput} value={searchValue} placeholder="Поиск...."/>
+            <input onChange={onChangeSearchInput} value={searchValue} placeholder="Search...."/>
           </div>
         
         </div>

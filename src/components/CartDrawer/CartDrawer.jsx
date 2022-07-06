@@ -31,7 +31,7 @@ const CartDrawer = ({onCloseCart, onRemove,items = [], opened}) => {
         <div className={`overlay ${opened ? "overlay_visible" : ''}`}> 
         <div className="drawer">
           <div className="cart">
-            <h2 className="cart-title">Корзина <img onClick={onCloseCart} src="/img/btn-remove.svg" alt="Remove"/></h2>
+            <h2 className="cart-title">Cart<img onClick={onCloseCart} src="/img/btn-remove.svg" alt="Remove"/></h2>
 
             {items.length > 0 ?
             <div>
@@ -50,20 +50,20 @@ const CartDrawer = ({onCloseCart, onRemove,items = [], opened}) => {
           <div className="cart-total-block">
           <ul>
             <li className="cart-total">
-              <span>Итого:</span>
+              <span>Amount:</span>
               <div></div>
               <b>{totalPrice} $</b>
             </li>
             <li className="cart-tax">
-              <span>Налог 5%:</span>
+              <span>Tax 5%:</span>
               <div></div>
               <b>{totalPrice / 100 * 5} $</b>
             </li>
           </ul>
-          <button className="cart-checkout-btn" onClick={onClickOrder}>Оформить заказ <img src="/img/arrow.svg" alt="Arrow"/></button>
+          <button className="cart-checkout-btn" onClick={onClickOrder}>Make an order<img src="/img/arrow.svg" alt="Arrow"/></button>
         </div>
             </div>
-            : <Info onCloseCart={onCloseCart} title={isOrderComplete ? "Заказ оформлен!" : "Корзина Пустая"}imgUrl={isOrderComplete ? "/img/complete-order.jpg" :"/img/box.png" } description={isOrderComplete ? `Ваш заказ #${orderId} скоро будет передан курьерской доставке` : "Добавьте хотя бы одну пару кроссовок, чтобы сделать заказ."}/>
+            : <Info onCloseCart={onCloseCart} title={isOrderComplete ? "Your order is processed!" : "Cart is empty"}imgUrl={isOrderComplete ? "/img/complete-order.jpg" :"/img/box.png" } description={isOrderComplete ? `Your order #${orderId} order will soon be delivered by courier` : "Add at least one pair of sneakers to make an order"}/>
                 }
           </div>
         </div>

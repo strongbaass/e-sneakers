@@ -13,7 +13,7 @@ const Header = (props) => {
           <img width={40} height={40} src="/img/logo.png" alt=""/>
           <div className="headerInfo">
             <h3>Sneakers store</h3>
-            <p>Магазин лучших кроссовок</p>
+            <p>Best sneakers store</p>
           </div>
         </div>
         </Link>

@@ -23,7 +23,7 @@ const Orders = () => {
             <div className="favorites"> 
             {(isLoading ? [...Array(10)] : orders.length > 0)   ?  <div>
                 <div>
-                    <h1 className="favorites_title">Мои Покупки</h1>
+                    <h1 className="favorites_title">My orders</h1>
                 </div>
             <div className="favorites_cards">
             {(isLoading ? [...Array(10)] : orders).map((item, index) => (
@@ -35,10 +35,10 @@ const Orders = () => {
             : <div className="favorites_null">
             <div className="favorites_info">
                 <img src="/img/nofavorite.png" alt="" />
-                <h3>У вас нет заказов</h3>
-                <p>Вы нищеброд? Оформите хотя бы один заказ.</p>
+                <h3>You are don't have orderds</h3>
+                <p>Make one order in our shop</p>
                 <Link to="/">
-                    <button className="favorite_backbtn"><img src="/img/arrowleft.svg" alt="" /> Вернуться назад</button>
+                    <button className="favorite_backbtn"><img src="/img/arrowleft.svg" alt="" />Go back and make order</button>
                 </Link>
             </div>
         </div>}

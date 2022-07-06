@@ -11,7 +11,7 @@ const Favorites = ({ onAddToFavorite}) => {
             {favorites.length  ? 
             <div>
                 <div>
-                    <h1 className="favorites_title">Мои закладки</h1>
+                    <h1 className="favorites_title">My Favorites</h1>
                 </div>
             <div className="favorites_cards">
             {
@@ -25,10 +25,10 @@ const Favorites = ({ onAddToFavorite}) => {
             <div className="favorites_null">
                 <div className="favorites_info">
                     <img src="/img/nofavorite.png" alt="" />
-                    <h3>Закладок нет :(</h3>
-                    <p>Вы ничего не добавляли в закладки</p>
+                    <h3>Nothing in Favorites :(</h3>
+                    <p>You're not added sneakers in your Favorites</p>
                     <Link to="/">
-                        <button className="favorite_backbtn"><img src="/img/arrowleft.svg" alt="" /> Вернуться назад</button>
+                        <button className="favorite_backbtn"><img src="/img/arrowleft.svg" alt="" />Back</button>
                     </Link>
                 </div>
             </div>}
