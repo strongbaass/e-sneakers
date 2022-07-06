@@ -46,3 +46,10 @@ a{
 
     }
 }
+@media (max-width: 500px) {
+    .content_info{
+        flex-direction: column;
+        padding-bottom: 20px;
+    }
+    
+}

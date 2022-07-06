@@ -41,3 +41,21 @@ header{
             }
         }
     }
+@media (max-width: 500px) {
+    header{
+        display: block;
+    }
+    .headerRight{
+        margin-top: 30px;
+        padding: 0;
+        .cart-info{
+            span{
+                font-size: 20px;
+            }
+        }
+        .cart-img, .favorite-img, .user-img{
+            width: 25px;
+            height: 25px;
+        }
+    }
+}

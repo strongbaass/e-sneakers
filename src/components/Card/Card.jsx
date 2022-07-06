@@ -32,7 +32,7 @@ const Card = ({id, imageUrl, title,price, onPlus, onFavorite, favorites = true, 
           <div className="card_favorite">
            {onFavorite && <img onClick={onClickFavorite} src={IsItemFavorited(id) === favorites ?  "/img/heart-liked.svg" : "/img/heart-unliked.svg"} alt="unliked"/>}
         </div>
-        <img width={133} height={112} src={imageUrl} alt="Sneakers"/>
+        <img className="card_img" width={133} height={112} src={imageUrl} alt="Sneakers"/>
         <h5>{title}</h5>
         <div className="card-info">
           <div className="card-info-price">

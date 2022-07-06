@@ -19,8 +19,8 @@ const Header = (props) => {
         </Link>
         <ul className="headerRight">
             <li onClick={props.onClickCart} className="cart-info"><img className="cart-img" width={18} height={18} src="/img/cart.svg" alt=""/><span>{totalPrice} $</span></li>
-              <li className="favorite-info"><Link to="/favorites"><img width={18} height={18} src="/img/favorite.svg" alt=""/></Link></li>
-            <li className="user-info"><Link to="/orders"><img width={18} height={18} src="/img/user.svg" alt=""/></Link></li>
+              <li className="favorite-info"><Link to="/favorites"><img className="favorite-img" width={18} height={18} src="/img/favorite.svg" alt=""/></Link></li>
+            <li className="user-info"><Link to="/orders"><img className="user-img" width={18} height={18} src="/img/user.svg" alt=""/></Link></li>
         </ul>
       </header>
     )
